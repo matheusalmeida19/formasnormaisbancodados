@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividade Parcial - Engenharia de Software</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .hover-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    }
+    .question:hover {
+      color: #60a5fa; /* Tailwind blue-400 */
+    }
+    .image-container {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 2px solid #3b82f6; /* Tailwind blue-500 */
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+  <!-- Header -->
+  <header class="bg-gray-800 py-6">
+    <h1 class="text-4xl font-bold text-center text-blue-400">
+      Atividade Parcial - Engenharia de Software
+    </h1>
+    <p class="text-center mt-2 text-gray-400 text-sm">
+      4º Período | 2024
+    </p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto my-10 p-8 bg-gray-800 rounded-lg shadow-lg">
+
+    <!-- Section: Alunos -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-blue-300 mb-4">Alunos</h2>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="p-4 bg-gray-700 rounded-lg hover-card transition duration-300">
+          <h3 class="text-xl font-semibold">Matheus Siqueira Almeida</h3>
+          <p class="text-gray-400 mt-2">Líder e responsável pela apresentação</p>
+        </div>
+        <div class="p-4 bg-gray-700 rounded-lg hover-card transition duration-300">
+          <h3 class="text-xl font-semibold">Mylena Monteiro da Silva</h3>
+          <p class="text-gray-400 mt-2">Pesquisadora, Organizadora de conteúdo</p>
+        </div>
+        <div class="p-4 bg-gray-700 rounded-lg hover-card transition duration-300">
+          <h3 class="text-xl font-semibold">Mykaell Santana de Souza Rodrigues</h3>
+          <p class="text-gray-400 mt-2">Redator</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Normalização -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-blue-300 mb-4">Normalização em Banco de Dados</h2>
+      <p class="text-gray-300 leading-relaxed">
+        A normalização é um princípio crucial para organizar e estruturar bancos de dados relacionais. Ela ajuda a eliminar redundâncias, reduzir inconsistências e garantir a integridade dos dados.
+      </p>
+    </section>
+
+    <!-- Questions -->
+    <section class="space-y-12">
+      <!-- Question 1 -->
+      <article>
+        <h3 class="text-2xl font-semibold text-blue-300 question transition duration-300">
+          1. Qual é a importância da normalização para a integridade dos dados em bancos relacionais?
+        </h3>
+        <p class="mt-4 text-gray-300">
+          A normalização é essencial para garantir a integridade dos dados em bancos de dados relacionais. Ela evita:
+        </p>
+        <ul class="list-disc pl-6 mt-4 text-gray-400 space-y-2">
+          <li><strong>Redundância:</strong> Reduz a duplicação de dados, o que minimiza o espaço de armazenamento.</li>
+          <li><strong>Anomalias de atualização:</strong> Corrige inconsistências que podem surgir durante operações de inserção, atualização ou exclusão.</li>
+          <li><strong>Consistência:</strong> Garante que os dados sigam regras bem definidas, evitando valores inválidos ou discrepantes.</li>
+        </ul>
+        <button onclick="toggleExample('example1')" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg">
+          Exemplo
+        </button>
+        <div id="example1" class="hidden mt-4">
+          <div class="flex justify-center space-x-4 mt-6">
+            <img src="../image/formas_normais.png" alt="Esquema de formas normais" class="w-1/3 rounded-lg border-2 border-blue-500">
+            <img src="../image/tres_primeiras_fn.png" alt="Diagrama das três primeiras formas normais" class="w-1/3 rounded-lg border-2 border-blue-500">
+          </div>
+        </div>
+        <p class="mt-4 text-gray-300">
+          Assim, a normalização proporciona uma base sólida para consultas precisas e facilita a manutenção do banco de dados.
+        </p>
+      </article>
+    
+      <!-- Question 2 -->
+      <article>
+        <h3 class="text-2xl font-semibold text-blue-300 question transition duration-300">
+          2. Explique as características da Primeira e Segunda Formas Normais (1FN e 2FN) e como identificá-las.
+        </h3>
+        <p class="mt-4 text-gray-300"><strong>Primeira Forma Normal (1FN):</strong></p>
+        <ul class="list-disc pl-6 mt-2 text-gray-400 space-y-2">
+          <li><strong>Característica:</strong> Requer que todos os atributos tenham valores atômicos (não divisíveis) e que não existam grupos repetidos.</li>
+          <li><strong>Identificação:</strong> Verifique se há campos que armazenam múltiplos valores ou listas. Se sim, esses dados devem ser decompostos em tabelas separadas.</li>
+          <li><strong>Impacto:</strong> Elimina grupos repetitivos, resultando em tabelas mais simples e organizadas, facilitando consultas e operações.</li>
+        </ul>
+        <button onclick="toggleExample('example2')" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg">
+          Exemplo
+        </button>
+        <div id="example2" class="hidden mt-4">
+          <div class="flex justify-center space-x-4 mt-6">
+            <img src="../image/fn1_1.png" alt="Exemplo de 1FN - Parte 1" class="w-1/3 rounded-lg border-2 border-blue-500">
+            <img src="../image/fn1_2.png" alt="Exemplo de 1FN - Parte 2" class="w-1/3 rounded-lg border-2 border-blue-500">
+          </div>
+          <div class="flex justify-center mt-4">
+            <img src="../image/fn1_3.png" alt="Exemplo de 1FN - Parte 3" class="w-1/2 rounded-lg border-2 border-blue-500">
+          </div>
+        </div>
+        <p class="mt-4 text-gray-300"><strong>Segunda Forma Normal (2FN):</strong></p>
+<ul class="list-disc pl-6 mt-2 text-gray-400 space-y-2">
+  <li><strong>Característica:</strong> Além de atender à 1FN, exige que todos os atributos não-chave sejam completamente dependentes da chave primária inteira.</li>
+  <li><strong>Identificação:</strong> Em tabelas com chaves primárias compostas, verifique se algum atributo não-chave depende apenas de parte da chave primária. Esses atributos devem ser movidos para uma nova tabela.</li>
+  <li><strong>Impacto:</strong> Elimina dependências parciais, resultando em menos redundância e maior integridade.</li>
+</ul>
+<button onclick="toggleExample('example2b')" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg">
+  Exemplo
+</button>
+<div id="example2b" class="hidden mt-4">
+  <div class="flex justify-center mt-6">
+    <img src="../image/fn2_2.png" alt="Exemplo de 2FN - Parte 2" class="w-3/4 rounded-lg border-2 border-blue-500">
+  </div>
+</div>
+<p class="mt-4 text-gray-300">
+  A 1FN e 2FN ajudam a estruturar os dados, dividindo informações relacionadas em tabelas distintas, o que melhora a organização e facilita futuras expansões.
+</p>
+
+      </article>
+
+      <article>
+        <h3 class="text-2xl font-semibold text-blue-300 question transition duration-300">
+          3. Quais são os principais desafios na implementação da BCNF e 4FN?
+        </h3>
+        <p class="mt-4 text-gray-300"><strong>Forma Normal de Boyce-Codd (BCNF):</strong></p>
+        <ul class="list-disc pl-6 mt-2 text-gray-400 space-y-2">
+          <li><strong>Desafio:</strong> Nem sempre é possível alcançá-la sem perder dependências funcionais importantes. Isso pode levar à necessidade de compromissos que impactem negativamente o desempenho.</li>
+          <li><strong>Aplicabilidade:</strong> É útil em casos onde há dependências complexas entre atributos não-chave e múltiplas chaves candidatas.</li>
+        </ul>
+        <p class="mt-4 text-gray-300"><strong>Quarta Forma Normal (4FN):</strong></p>
+        <ul class="list-disc pl-6 mt-2 text-gray-400 space-y-2">
+          <li><strong>Desafio:</strong> Identificar e remover dependências multivaloradas não-triviais pode ser complexo, especialmente em bancos de dados com relacionamentos sofisticados.</li>
+          <li><strong>Aplicabilidade:</strong> Essencial em cenários onde um atributo pode ter múltiplos valores independentes, como em sistemas de gerenciamento de bibliotecas, onde livros podem ter múltiplos autores e assuntos.</li>
+        </ul>
+        <button onclick="toggleExample('example3')" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg">
+          Exemplo
+        </button>
+        <div id="example3" class="hidden mt-4">
+          <div class="flex justify-center space-x-4 mt-6">
+            <img src="../image/fn4_1.png" alt="Exemplo de 4FN - Parte 1" class="w-1/3 rounded-lg border-2 border-blue-500">
+            <img src="../image/fn4_2.png" alt="Exemplo de 4FN - Parte 2" class="w-1/3 rounded-lg border-2 border-blue-500">
+            <img src="../image/fn4_3.png" alt="Exemplo de 4FN - Parte 3" class="w-1/3 rounded-lg border-2 border-blue-500">
+          </div>
+        </div>
+      </article>      
+    
+      <!-- Question 4 -->
+      <article>
+        <h3 class="text-2xl font-semibold text-blue-300 question transition duration-300">
+          4. Descreva uma situação prática onde a 5FN seria necessária.
+        </h3>
+        <p class="mt-4 text-gray-300">
+          Imagine um sistema de alocação de funcionários a projetos com diferentes cargos. Temos três tabelas:
+        </p>
+        <ul class="list-disc pl-6 mt-4 text-gray-400 space-y-2">
+          <li><strong>Projeto-Funcionário:</strong> Relaciona funcionários aos projetos em que estão alocados.</li>
+          <li><strong>Projeto-Cargo:</strong> Define os cargos disponíveis para cada projeto.</li>
+          <li><strong>Funcionário-Cargo:</strong> Relaciona funcionários aos cargos que podem ocupar.</li>
+        </ul>
+        <button onclick="toggleExample('example4')" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg">
+          Exemplo
+        </button>
+        <div id="example4" class="hidden mt-4">
+          <h4 class="text-xl text-gray-300 font-semibold mb-4">Exemplo de Dados Não Normalizados</h4>
+          <pre class="bg-gray-800 text-gray-300 p-4 rounded-lg overflow-auto">
+      +---------------+------------+------------+
+      | Funcionário   | Projeto    | Cargo      |
+      +---------------+------------+------------+
+      | João Silva    | Projeto A  | Gerente    |
+      | Maria Costa   | Projeto A  | Desenvolvedor |
+      | João Silva    | Projeto B  | Tester     |
+      | Maria Costa   | Projeto B  | Desenvolvedor |
+      +---------------+------------+------------+
+          </pre>
+          <h4 class="text-xl text-gray-300 font-semibold mt-6 mb-4">Exemplo de Dados Normalizados (5FN)</h4>
+          <div class="flex justify-center space-x-6">
+            <div>
+              <p class="mt-4 text-gray-300 font-semibold text-center">Tabela 1: Projeto-Funcionário</p>
+              <pre class="bg-gray-800 text-gray-300 p-4 rounded-lg overflow-auto">
+      +---------------+------------+
+      | Funcionário   | Projeto    |
+      +---------------+------------+
+      | João Silva    | Projeto A  |
+      | Maria Costa   | Projeto A  |
+      | João Silva    | Projeto B  |
+      | Maria Costa   | Projeto B  |
+      +---------------+------------+
+              </pre>
+            </div>
+            <div>
+              <p class="mt-4 text-gray-300 font-semibold text-center">Tabela 2: Projeto-Cargo</p>
+              <pre class="bg-gray-800 text-gray-300 p-4 rounded-lg overflow-auto">
+      +------------+------------+
+      | Projeto    | Cargo      |
+      +------------+------------+
+      | Projeto A  | Gerente    |
+      | Projeto A  | Desenvolvedor |
+      | Projeto B  | Tester     |
+      | Projeto B  | Desenvolvedor |
+      +------------+------------+
+              </pre>
+            </div>
+          </div>
+          <div class="flex justify-center space-x-6 mt-6">
+            <div>
+              <p class="mt-4 text-gray-300 font-semibold text-center">Tabela 3: Funcionário-Cargo</p>
+              <pre class="bg-gray-800 text-gray-300 p-4 rounded-lg overflow-auto">
+      +---------------+------------+
+      | Funcionário   | Cargo      |
+      +---------------+------------+
+      | João Silva    | Gerente    |
+      | João Silva    | Tester     |
+      | Maria Costa   | Desenvolvedor |
+      +---------------+------------+
+              </pre>
+            </div>
+            <div>
+ 
+          </div>
+        </div>
+      </article>
+      
+
+  <!-- Question 5 -->
+<article>
+  <h3 class="text-2xl font-semibold text-blue-300 question transition duration-300">
+    5. Como 1FN, 2FN e 3FN influenciam a estrutura e eficiência de um banco de dados?
+  </h3>
+  <ul class="list-disc pl-6 mt-4 text-gray-400 space-y-2">
+    <li><strong>1FN:</strong> Simplifica a estrutura do banco ao eliminar valores compostos e repetitivos. Facilita consultas e atualizações, mas pode levar ao aumento no número de tabelas.</li>
+    <li><strong>2FN:</strong> Remove dependências parciais, tornando a estrutura mais modular. Isso diminui redundâncias, mas pode aumentar a complexidade das consultas, exigindo mais junções.</li>
+    <li><strong>3FN:</strong> Elimina dependências transitivas, assegurando que cada tabela armazene apenas informações diretamente relacionadas à sua chave primária. Aumenta a consistência e reduz a redundância.</li>
+  </ul>
+  <button onclick="toggleExample('example5')" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg">
+    Exemplo
+  </button>
+  <div id="example5" class="hidden mt-4">
+    <div class="flex justify-center mt-6">
+      <img src="../image/fn3_1.png" alt="Exemplo de 3FN" class="w-3/4 rounded-lg border-2 border-blue-500">
+    </div>
+  </div>
+  <p class="mt-4 text-gray-300">
+    <strong>Cenários:</strong> Pequenos sistemas podem se beneficiar menos de uma normalização completa, priorizando o desempenho com menos tabelas. Já sistemas grandes requerem normalização até a 3FN para garantir consistência e escalabilidade, embora a desnormalização seja útil em casos específicos.
+  </p>
+</article>
+
+
+  <!-- JavaScript para mostrar/esconder exemplos -->
+  <script>
+    function toggleExample(id) {
+      const element = document.getElementById(id);
+      if (element.classList.contains('hidden')) {
+        element.classList.remove('hidden');
+      } else {
+        element.classList.add('hidden');
+      }
+    }
+  </script>
+</section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-center py-4">
+    <p class="text-gray-400 text-sm">Engenharia de Software | 4º Período - 2024</p>
+  </footer>
+
+</body>
+</html>

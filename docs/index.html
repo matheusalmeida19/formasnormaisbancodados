@@ -151,15 +151,26 @@
           <li><strong>Desafio:</strong> Nem sempre é possível alcançá-la sem perder dependências funcionais importantes. Isso pode levar à necessidade de compromissos que impactem negativamente o desempenho.</li>
           <li><strong>Aplicabilidade:</strong> É útil em casos onde há dependências complexas entre atributos não-chave e múltiplas chaves candidatas.</li>
         </ul>
+        <button onclick="toggleExample('exampleBCNF')" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg">
+          Exemplo
+        </button>
+        <div id="exampleBCNF" class="hidden mt-4">
+          <div class="flex justify-center space-x-4 mt-6">
+            <img src="image/fnbc_1.png" alt="Exemplo de BCNF - Parte 1" class="w-1/3 rounded-lg border-2 border-blue-500">
+            <img src="image/fnbc_2.png" alt="Exemplo de BCNF - Parte 2" class="w-1/3 rounded-lg border-2 border-blue-500">
+            <img src="image/fnbc_3.png" alt="Exemplo de BCNF - Parte 3" class="w-1/3 rounded-lg border-2 border-blue-500">
+          </div>
+        </div>
+      
         <p class="mt-4 text-gray-300"><strong>Quarta Forma Normal (4FN):</strong></p>
         <ul class="list-disc pl-6 mt-2 text-gray-400 space-y-2">
           <li><strong>Desafio:</strong> Identificar e remover dependências multivaloradas não-triviais pode ser complexo, especialmente em bancos de dados com relacionamentos sofisticados.</li>
           <li><strong>Aplicabilidade:</strong> Essencial em cenários onde um atributo pode ter múltiplos valores independentes, como em sistemas de gerenciamento de bibliotecas, onde livros podem ter múltiplos autores e assuntos.</li>
         </ul>
-        <button onclick="toggleExample('example3')" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg">
+        <button onclick="toggleExample('example4FN')" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg">
           Exemplo
         </button>
-        <div id="example3" class="hidden mt-4">
+        <div id="example4FN" class="hidden mt-4">
           <div class="flex justify-center space-x-4 mt-6">
             <img src="image/fn4_1.png" alt="Exemplo de 4FN - Parte 1" class="w-1/3 rounded-lg border-2 border-blue-500">
             <img src="image/fn4_2.png" alt="Exemplo de 4FN - Parte 2" class="w-1/3 rounded-lg border-2 border-blue-500">
@@ -169,80 +180,31 @@
       </article>      
     
       <!-- Question 4 -->
-      <article>
-        <h3 class="text-2xl font-semibold text-blue-300 question transition duration-300">
-          4. Descreva uma situação prática onde a 5FN seria necessária.
-        </h3>
-        <p class="mt-4 text-gray-300">
-          Imagine um sistema de alocação de funcionários a projetos com diferentes cargos. Temos três tabelas:
-        </p>
-        <ul class="list-disc pl-6 mt-4 text-gray-400 space-y-2">
-          <li><strong>Projeto-Funcionário:</strong> Relaciona funcionários aos projetos em que estão alocados.</li>
-          <li><strong>Projeto-Cargo:</strong> Define os cargos disponíveis para cada projeto.</li>
-          <li><strong>Funcionário-Cargo:</strong> Relaciona funcionários aos cargos que podem ocupar.</li>
-        </ul>
-        <button onclick="toggleExample('example4')" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg">
-          Exemplo
-        </button>
-        <div id="example4" class="hidden mt-4">
-          <h4 class="text-xl text-gray-300 font-semibold mb-4">Exemplo de Dados Não Normalizados</h4>
-          <pre class="bg-gray-800 text-gray-300 p-4 rounded-lg overflow-auto">
-      +---------------+------------+------------+
-      | Funcionário   | Projeto    | Cargo      |
-      +---------------+------------+------------+
-      | João Silva    | Projeto A  | Gerente    |
-      | Maria Costa   | Projeto A  | Desenvolvedor |
-      | João Silva    | Projeto B  | Tester     |
-      | Maria Costa   | Projeto B  | Desenvolvedor |
-      +---------------+------------+------------+
-          </pre>
-          <h4 class="text-xl text-gray-300 font-semibold mt-6 mb-4">Exemplo de Dados Normalizados (5FN)</h4>
-          <div class="flex justify-center space-x-6">
-            <div>
-              <p class="mt-4 text-gray-300 font-semibold text-center">Tabela 1: Projeto-Funcionário</p>
-              <pre class="bg-gray-800 text-gray-300 p-4 rounded-lg overflow-auto">
-      +---------------+------------+
-      | Funcionário   | Projeto    |
-      +---------------+------------+
-      | João Silva    | Projeto A  |
-      | Maria Costa   | Projeto A  |
-      | João Silva    | Projeto B  |
-      | Maria Costa   | Projeto B  |
-      +---------------+------------+
-              </pre>
-            </div>
-            <div>
-              <p class="mt-4 text-gray-300 font-semibold text-center">Tabela 2: Projeto-Cargo</p>
-              <pre class="bg-gray-800 text-gray-300 p-4 rounded-lg overflow-auto">
-      +------------+------------+
-      | Projeto    | Cargo      |
-      +------------+------------+
-      | Projeto A  | Gerente    |
-      | Projeto A  | Desenvolvedor |
-      | Projeto B  | Tester     |
-      | Projeto B  | Desenvolvedor |
-      +------------+------------+
-              </pre>
-            </div>
-          </div>
-          <div class="flex justify-center space-x-6 mt-6">
-            <div>
-              <p class="mt-4 text-gray-300 font-semibold text-center">Tabela 3: Funcionário-Cargo</p>
-              <pre class="bg-gray-800 text-gray-300 p-4 rounded-lg overflow-auto">
-      +---------------+------------+
-      | Funcionário   | Cargo      |
-      +---------------+------------+
-      | João Silva    | Gerente    |
-      | João Silva    | Tester     |
-      | Maria Costa   | Desenvolvedor |
-      +---------------+------------+
-              </pre>
-            </div>
-            <div>
- 
-          </div>
-        </div>
-      </article>
+<article>
+  <h3 class="text-2xl font-semibold text-blue-300 question transition duration-300">
+    4. Descreva uma situação prática onde a 5FN seria necessária.
+  </h3>
+  <p class="mt-4 text-gray-300">
+    Imagine um sistema de alocação de funcionários a projetos com diferentes cargos. Temos três tabelas:
+  </p>
+  <ul class="list-disc pl-6 mt-4 text-gray-400 space-y-2">
+    <li><strong>Projeto-Funcionário:</strong> Relaciona funcionários aos projetos em que estão alocados.</li>
+    <li><strong>Projeto-Cargo:</strong> Define os cargos disponíveis para cada projeto.</li>
+    <li><strong>Funcionário-Cargo:</strong> Relaciona funcionários aos cargos que podem ocupar.</li>
+  </ul>
+  <button onclick="toggleExample('example4')" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg">
+    Exemplo
+  </button>
+  <div id="example4" class="hidden mt-4">
+    <div class="flex justify-center space-x-4 mt-6">
+      <img src="image/fn5_1.png" alt="Exemplo de 5FN - Parte 1" class="w-1/4 rounded-lg border-2 border-blue-500">
+    </div>
+    <div class="flex justify-center space-x-4 mt-6">
+      <img src="image/fn5_2.png" alt="Exemplo de 5FN - Parte 2" class="w-1/4 rounded-lg border-2 border-blue-500">
+      <img src="image/fn5_3.png" alt="Exemplo de 5FN - Parte 3" class="w-1/4 rounded-lg border-2 border-blue-500">
+    </div>
+  </div>
+</article>
       
 
   <!-- Question 5 -->
@@ -267,6 +229,37 @@
     <strong>Cenários:</strong> Pequenos sistemas podem se beneficiar menos de uma normalização completa, priorizando o desempenho com menos tabelas. Já sistemas grandes requerem normalização até a 3FN para garantir consistência e escalabilidade, embora a desnormalização seja útil em casos específicos.
   </p>
 </article>
+
+<!-- Referências -->
+<section class="mt-12">
+  <h2 class="text-3xl font-bold text-blue-300 mb-4">Referências</h2>
+  <ul class="list-disc pl-6 mt-4 text-gray-400 space-y-2">
+    <li>
+      <a href="https://www.devmedia.com.br/artigo-sql-magazine-6-normalizacao-tecnicas-e-conceitos/7087" 
+         class="text-blue-400 hover:underline" target="_blank">
+        https://www.devmedia.com.br/artigo-sql-magazine-6-normalizacao-tecnicas-e-conceitos/7087
+      </a>
+    </li>
+    <li>
+      <a href="https://www.hashtagtreinamentos.com/o-que-sao-formas-normais-em-bancos-de-dados-sql" 
+         class="text-blue-400 hover:underline" target="_blank">
+        https://www.hashtagtreinamentos.com/o-que-sao-formas-normais-em-bancos-de-dados-sql
+      </a>
+    </li>
+    <li>
+      <a href="https://www.estrategiaconcursos.com.br/blog/banco-dados-forma-normal/" 
+         class="text-blue-400 hover:underline" target="_blank">
+        https://www.estrategiaconcursos.com.br/blog/banco-dados-forma-normal/
+      </a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=Cj84bb04tio" 
+         class="text-blue-400 hover:underline" target="_blank">
+        https://www.youtube.com/watch?v=Cj84bb04tio
+      </a>
+    </li>
+  </ul>
+</section>
 
 
   <!-- JavaScript para mostrar/esconder exemplos -->

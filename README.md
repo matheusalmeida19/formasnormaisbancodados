@@ -12,3 +12,4 @@ Este projeto é um site desenvolvido como parte de uma atividade acadêmica para
 - Tabelas e exemplos visuais das formas normais.
 - Botões interativos para exibir ou ocultar exemplos práticos.
 - Layout responsivo para diferentes tamanhos de tela.
+https://matheusalmeida19.github.io/formasnormaisbancodados/
